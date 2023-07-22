@@ -9,7 +9,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NoWarn>1701;1702;NU5100</NoWarn>
     <Version>1.3.0</Version>
-    <Authors>Chiel ten Brinke,Nathan Miller</Authors>
+    <Authors>Chiel ten Brinke, Nathan Miller</Authors>
     <Company>nam20485</Company>
     <Description>(Updated) Lean wrapper around Graphviz for building graphs, reading/writing dot files, exporting images, or reading out layout parameters.</Description>
     <Copyright>Copyright 2023</Copyright>
