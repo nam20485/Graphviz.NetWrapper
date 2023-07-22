@@ -3,20 +3,27 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
+	<PackageId>nam20485.Rubjerg.Graphviz</PackageId>
     <Platforms>x64</Platforms>
     <PlatformTarget>x64</PlatformTarget>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NoWarn>1701;1702;NU5100</NoWarn>
-    <Version>1.1.0</Version>
-    <Authors>Chiel ten Brinke</Authors>
-    <Company>Rubjerg</Company>
-    <Description>Lean wrapper around Graphviz for building graphs, reading/writing dot files, exporting images, or reading out layout parameters.</Description>
-    <Copyright>Copyright 2020</Copyright>
-    <PackageTags>graphviz dotnet graphdrawing</PackageTags>
-    <RepositoryUrl>https://github.com/Rubjerg/Graphviz.NetWrapper</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Rubjerg/Graphviz.NetWrapper</PackageProjectUrl>
+    <Version>1.3.0</Version>
+    <Authors>Chiel ten Brinke,Nathan Miller</Authors>
+    <Company>nam20485</Company>
+    <Description>(Updated) Lean wrapper around Graphviz for building graphs, reading/writing dot files, exporting images, or reading out layout parameters.</Description>
+    <Copyright>Copyright 2023</Copyright>
+    <PackageTags>graphviz dotnet graphdrawing nam20485</PackageTags>
+    <RepositoryUrl>https://github.com/nam20485/Graphviz.NetWrapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/nam20485/Graphviz.NetWrapper</PackageProjectUrl>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +41,20 @@
     <None Include="..\LICENSE">
       <Pack>true</Pack>
       <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md">
+		<Pack>true</Pack>
+		<PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
