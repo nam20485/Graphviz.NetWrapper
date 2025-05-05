@@ -7,7 +7,7 @@ Graphviz.NetWrapper
 
 At the moment, `Rubjerg.Graphviz` ships with a bunch of precompiled Graphviz dlls built for 64 bit Windows.
 This library is compatible with .NET Standard 2.0.
-The unit tests run against .NET Framework 4.8 and .NET 6.0.
+The unit tests run against .NET Framework 4.8 and .NET 8.0.
 In the future support may be extended to other platforms.
 
 ## Contributing
@@ -22,6 +22,9 @@ Pull request that fall within the scope of this project are welcome.
 
 You can either add this library as a nuget package to project, or include the source and add a
 project reference.
+
+To run the code from this library, you must have the Microsoft Visual C++ Redistributable (2015-2022) installed, which provides the required runtime libraries.
+You can download it from the [official Microsoft website](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
 
 ### Adding as a Nuget package
 

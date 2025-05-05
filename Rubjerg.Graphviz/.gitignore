@@ -2,9 +2,13 @@ bin/
 obj/
 *.csproj.user
 *.dll
+*.exe
 *.exp
 *.lib
 *.pdb
 config6
 *.ipdb
 *.iobj
+*.exe
+*.svg
+*.dot

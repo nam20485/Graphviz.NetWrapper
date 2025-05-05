@@ -1,17 +1,20 @@
+/// @file
+/// @ingroup public_apis
+/// @ingroup common_render
 /*************************************************************************
  * Copyright (c) 2011 AT&T Intellectual Property 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors: Details at https://graphviz.org
  *************************************************************************/
 
-#ifndef USERSHAPE_H
-#define USERSHAPE_H
+#pragma once
 
 #include "cdt.h"
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -49,8 +52,8 @@ extern "C" {
 	Dtlink_t link;
 	const char *name;
 	int macro_id;
-	boolean must_inline;
-	boolean nocache;
+	bool must_inline;
+	bool nocache;
 	FILE *f;
 	imagetype_t type;
 	char *stringtype;
@@ -62,5 +65,4 @@ extern "C" {
 
 #ifdef __cplusplus
 }
-#endif
 #endif
