@@ -1,0 +1,43 @@
+name: Publish NuGet
+
+on:
+  push:
+    branches:
+      - release
+    paths:
+      - 'src/**'
+      - 'Graphviz.NetWrapper.sln'
+      - 'Directory.Build.props'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@
+        
+        - name: Add msbuild to PATH
+          uses: microsoft/setup-msbuild@v1.0.2
+
+        - name: Setup NuGet.exe for use with actions
+          uses: NuGet/setup-nuget@v1.0.5
+
+        - name: Restore Tools
+          run: dotnet tool restore
+
+        - name: Restore NuGet Packages
+          run: nuget restore Rubjerg.Graphviz.sln
+        
+        - name: Build App
+          run: msbuild Rubjerg.Graphviz.sln /p:Configuration=Release
+
+        ## package is created in the build step
+        # - name: Create package
+        #   #run: msbuild -t:pack -p:Configuration=Release Rubjerg.Graphviz.sln
+        #   run: dotnet pack Rubjerg.Graphviz/Rubjerg.Graphviz.csproj -c Release --include-symbols
+
+        - name: Publish to NuGet.org            
+          run: nuget push Rubjerg.Graphviz\bin\x64\Release\*.nupkg Rubjerg.Graphviz\bin\x64\Release\*.snupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
+          if: github.ref == 'refs/heads/release'
